@@ -1,0 +1,90 @@
+//	Shape Class는 abstract calss 이며 Rectangle 및 Triangle Class의 Base Class 임
+//	Rectangle Class 의 생성자는 선분 갯수, 길이, 너비 값을 입력으로 받음
+//	Triangle Class 의 생성자는 선분 갯수, 선분 1, 선분 2, 선분 3을 입력으로 받음
+//	span(), area()는 각각 도형의 최대 선분 길이 및 도형 넓이를 출력 (사각형 넓이 : 가로 X 세로, 삼각형 넓이: s*(s-s1)*(s-s2)*(s-s3)
+//																									  여기서 s = (s1 + s2 + s3)/2
+//	ApplicatonType Class는 도형 관리 프로그램임
+//	input_item()은 키보드로부터 선분의 개수(3 또는 4)를 입력받아, 3이면 삼각형, 4면 사각형 객체를 만들고 vector에 element로 저장
+//											만약 선분 개수를 잘못 입력할 경우, 화면에 "Error, please enter 3 or 4"를 출력)
+//	displayAllShapes()는 각 객체의 print() 매소드를 이용해서 vector의 모든 element 정보를 화면에 출력(반드시 simplified for 반복문을 사용)
+//	모든 클래스는 .h 와 .cpp 파일로 분리되어야 함(Shape Class는 .cpp 필요 없음)
+//	main()을 포함하는 파일에는 ApplicationType 클래스의 header 파일만 추가할 것
+
+/* 이하 소스코드
+
+int main()
+{
+	ApplicationType appType;
+	appType.run();
+	return 0;
+}
+
+
+
+class Shape
+{
+protected:
+	int numSides;
+public:
+	Shape(int _num) : numSides(_num) {}
+	virtual double span() const = 0;
+	virtual double area() const = 0;
+	virtual void print() const = 0;
+};
+
+
+
+class Rectangle : public Shape
+{
+private:
+	double length;
+	double width;
+public:
+	// 구현 //
+}
+
+
+
+class Triangle : public Shape
+{
+private:
+	double side1;
+	double side2;
+	double side3;
+public:
+	// 구현 //
+}
+
+
+
+class ApplicationType
+{
+private:
+	vector<Shape*> shapes;
+public:
+	void run();
+	string getCommand();
+	void input_item();
+	void displayAllShapes();
+};
+
+
+
+
+void ApplicationType::run()
+{
+	string sOption;
+	while (1)
+	{
+		sOption = getCommand();
+		if (sOption == "1")			input_item();
+		else if (sOption == "2")	displayAllShapes();
+		else if (sOption == "3")	break;
+	}
+	cout << "Exit the program..." << endl;
+
+	for (auto elem : shapes) // 없어도 됨
+		delete elem;
+}
+
+*/

@@ -1,0 +1,35 @@
+//	conainter의 총 element 개수를 입력으로 받고, list container에 입력받은 숫자만큼 element를 생성
+//	이때, 각 element는 0-100사이의 random 정수 값
+get_elements(int num)
+
+//	출력화면과 같은 메뉴를 화면에 출력하고, 키보드로부터 command를 입력받음
+//	do while을 사용, 잘못된 입력일 경우 메뉴를 다시 출력
+get_command(string& command)
+
+//	container-generic 함수로, container의 element를 화면에 출력
+//	이때, 한 line에 10개의 element를 출력하고 각각의 element는 setw(4)를 사용하여 오른쪽 정렬시킴
+print(Iter iter_begin, Iter iter_end)
+
+//	container-generic 함수로 키보드로부터 key_value를 입력받고, container에 key_value와 동일한 값을 가지는 element의 개수를 화면에 출력
+//	이때 key_value는 list의 element_datatype와 동일하게 할 것, 예를 들어, 현재 element type은 int지만, list<double>로 변경할 경우
+//	double을 입력받을 수 있도록 선언할 것
+count_val(Iter iter_begin, Iter iter_end)
+
+// container-generic 함수로, 오름차순으로 container를 정렬
+sort(Iter iter_begin, Iter iter_end)
+
+int main()
+{
+	list<int> myList = get_elements(100);
+	string command;
+	while (1)
+	{
+		get_command(command);
+		if (command == "1")			print(begin(myList), end(myList));
+		else if (command == "2")	count_val(begin(myList), end(myList));
+		else if (command == "3")	sort(begin(myList), end(myList));
+		else if (command == "0")	break;
+	}
+	cout << "Exit program.." << endl;
+	return 0;
+}
